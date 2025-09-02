@@ -116,12 +116,12 @@ header nav a:hover::after{width:100%}
 .element .info{align-self:flex-start}
 
 /* ---------- Maybach ---------- */
-.MAYBACH{padding:72px 0;background:#0f0f10;color:#f8fafc}
+.MAYBACH{padding:72px 0;color:#000000}
 .MAYBACH .container{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
 .MAYBACH .img-container{display:flex;flex-direction:column;gap:12px}
 .MAYBACH .img-container img{border-radius:12px;background:#111}
 .MAYBACH .img-container h3{font-size:1.2rem}
-.MAYBACH .img-container p{color:#cbd5e1}
+.MAYBACH .img-container p{color:#000000}
 .programme{
   background:#161617;border:1px solid #222;border-radius:16px;box-shadow:0 12px 30px rgba(0,0,0,.35);
   padding:20px;display:flex;flex-direction:column;gap:12px
@@ -136,19 +136,19 @@ header nav a:hover::after{width:100%}
 
 /* ---------- Contact CTA ---------- */
 .contact{
-  text-align:center;padding:48px 18px;max-width:900px;margin:0 auto;
-  display:flex;flex-direction:column;gap:16px
+  text-align:center;padding:48px 18px;max-width:100%;margin:0 auto;
+  display:flex;flex-direction:column;gap:16px;background:#3f3f3f
 }
-.contact p{font-size:1.05rem;color:var(--muted)}
+.contact p{font-size:1.05rem;color:var(--bg)}
 .Contact{
-  background:var(--accent);color:#fff;border-radius:999px;padding:12px 20px;font-weight:700
+  background:var(--accent);color:#ffffff;border-radius:999px;padding:12px 20px;font-weight:700
 }
 .Contact:hover{filter:brightness(.95)}
 
 /* ---------- Newsletter ---------- */
-.final{padding:56px 18px;text-align:center;border-top:1px solid var(--line)}
+.final{padding:56px 18px;text-align:center;border-top:1px solid var(--fg);background-color: #111}
 .final h4{font-size:1.4rem}
-.final p{color:var(--muted);margin-top:6px;margin-bottom:16px}
+.final p{color:var(--bg);margin-top:6px;margin-bottom:16px}
 .final form{max-width:760px;margin:0 auto}
 .pill{
   display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);
@@ -162,26 +162,26 @@ header nav a:hover::after{width:100%}
 }
 .pill button:hover{opacity:.92}
 .consent{
-  margin-top:12px;display:flex;align-items:flex-start;gap:8px;color:var(--muted);font-size:.9rem;text-align:left
+  margin-top:12px;display:flex;align-items:flex-start;gap:8px;color:var(--bg);font-size:.9rem;text-align:left
 }
-.consent a{color:var(--fg);text-decoration:underline}
+.consent a{color:var(--bg);text-decoration:underline}
 .socials{
   margin-top:18px;display:flex;justify-content:center;gap:14px
 }
-.socials svg{width:22px;height:22px;fill:currentColor;opacity:.9}
+.socials svg{width:22px;height:22px;fill:#fff;opacity:.9}
 .socials a:hover svg{opacity:1}
 
 /* ---------- Footer ---------- */
 footer{
-  margin-top:48px;padding:40px 0;border-top:1px solid var(--line);
-  display:grid;grid-template-columns:repeat(4,1fr);gap:22px;align-items:start
+  padding:40px 0;border-top:1px solid var(--fg);
+  display:grid;grid-template-columns:repeat(4,1fr);gap:22px;align-items:start;background-color: #111;text-align: center;
 }
-footer h2{font-size:1.05rem;margin-bottom:10px}
+footer h2{font-size:1.05rem;margin-bottom:10px;color: var(--bg);}
 footer ul{list-style:none;display:grid;gap:8px}
 footer li{color:var(--muted)}
 footer li:hover{color:#111}
 footer > button{
-  justify-self:end;align-self:start;background:#fff;border:1px solid var(--line);
+  justify-self:end;align-self:flex-end;background:#fff;border:1px solid var(--line);
   border-radius:999px;box-shadow:var(--shadow);padding:8px
 }
 footer > button img{width:20px;height:20px}
