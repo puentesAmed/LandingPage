@@ -1,3 +1,214 @@
-body{
-    
+
+/* ---------- Base ---------- */
+:root{
+  --bg:#ffffff;
+  --fg:#111111;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+  --brand:#111111;
+  --accent:#b91c1c; /* rojo sutil para detalles */
+  --radius:18px;
+  --shadow:0 8px 24px rgba(0,0,0,.08);
 }
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",sans-serif;
+  color:var(--fg);
+  background:var(--bg);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none}
+.container{width:min(1200px,92%);margin-inline:auto}
+
+/* ---------- Header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:#fff;border-bottom:1px solid var(--line);
+}
+header .container{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;
+}
+.logo{height:36px;width:auto}
+header nav{display:flex;gap:28px}
+header nav a{
+  font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;
+  padding:6px 0;position:relative;color:#111;
+}
+header nav a::after{
+  content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--fg);
+  transition:width .2s ease;
+}
+header nav a:hover::after{width:100%}
+.acount{display:flex;align-items:center;gap:16px}
+.acount img{width:22px;height:22px;object-fit:contain;opacity:.9}
+.acount img:hover{opacity:1}
+
+/* ---------- Hero ---------- */
+#hero{position:relative}
+#hero .container{position:relative;padding:0}
+#hero .img-container img{
+  width:100%;height:64vh;object-fit:cover;object-position:center;
+}
+#hero .text-container{
+  position:absolute;left:6%;bottom:8%;
+  color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.35);
+}
+#hero h1{font-size:clamp(32px,5vw,56px);font-weight:800;letter-spacing:.02em}
+#hero h5{font-size:clamp(14px,2.2vw,18px);font-weight:500;opacity:.95}
+
+/* ---------- Products ---------- */
+#products{padding:56px 0}
+#products .container{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:22px;
+}
+.coche{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;
+  text-align:center;
+}
+.coche h2{font-size:.9rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)}
+.coche h5{font-size:1.05rem;font-weight:700}
+.coche img{margin-inline:auto;height:160px;object-fit:contain}
+.color{display:flex;justify-content:center;gap:10px;margin-top:4px}
+.color img{width:18px;height:18px;border-radius:50%;border:1px solid #d1d5db}
+.info{
+  margin-top:6px;align-self:center;
+  background:var(--brand);color:#fff;border-radius:999px;padding:10px 18px;
+  transition:transform .1s ease,opacity .2s ease;
+}
+.info:hover{opacity:.92;transform:translateY(-1px)}
+
+/* ---------- Stores ---------- */
+.STORES{padding:72px 0}
+.STORES .container{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center}
+.STORES .text-container h1{font-size:clamp(24px,3.5vw,40px);font-weight:800}
+.STORES .text-container h4{margin-top:10px;color:var(--muted);font-weight:500}
+.map{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.map img{width:100%;height:420px;object-fit:cover}
+.text-butoon{
+  position:absolute;left:20px;bottom:20px;right:20px;
+  background:#fff;border-radius:16px;padding:18px;box-shadow:var(--shadow)
+}
+.text-butoon h2{font-size:1.05rem;margin-bottom:10px}
+.find{
+  background:var(--brand);color:#fff;border-radius:999px;padding:10px 16px
+}
+.find:hover{opacity:.92}
+
+/* ---------- Accessories ---------- */
+.ACCESORIES{padding:56px 0}
+.ACCESORIES .container{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px
+}
+.element{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px
+}
+.element h3{font-size:1.05rem}
+.element img{height:220px;object-fit:cover;border-radius:12px}
+.element .info{align-self:flex-start}
+
+/* ---------- Maybach ---------- */
+.MAYBACH{padding:72px 0;background:#0f0f10;color:#f8fafc}
+.MAYBACH .container{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.MAYBACH .img-container{display:flex;flex-direction:column;gap:12px}
+.MAYBACH .img-container img{border-radius:12px;background:#111}
+.MAYBACH .img-container h3{font-size:1.2rem}
+.MAYBACH .img-container p{color:#cbd5e1}
+.programme{
+  background:#161617;border:1px solid #222;border-radius:16px;box-shadow:0 12px 30px rgba(0,0,0,.35);
+  padding:20px;display:flex;flex-direction:column;gap:12px
+}
+.programme img{border-radius:12px}
+.programme h2{font-size:1.25rem}
+.programme p{color:#d1d5db}
+.learn{
+  align-self:flex-start;background:#fff;color:#000;border-radius:999px;padding:10px 16px
+}
+.learn:hover{opacity:.9}
+
+/* ---------- Contact CTA ---------- */
+.contact{
+  text-align:center;padding:48px 18px;max-width:900px;margin:0 auto;
+  display:flex;flex-direction:column;gap:16px
+}
+.contact p{font-size:1.05rem;color:var(--muted)}
+.Contact{
+  background:var(--accent);color:#fff;border-radius:999px;padding:12px 20px;font-weight:700
+}
+.Contact:hover{filter:brightness(.95)}
+
+/* ---------- Newsletter ---------- */
+.final{padding:56px 18px;text-align:center;border-top:1px solid var(--line)}
+.final h4{font-size:1.4rem}
+.final p{color:var(--muted);margin-top:6px;margin-bottom:16px}
+.final form{max-width:760px;margin:0 auto}
+.pill{
+  display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);
+  border-radius:999px;padding:6px 6px 6px 14px;box-shadow:var(--shadow)
+}
+.pill input{
+  flex:1;border:0;outline:none;font-size:.95rem;padding:10px 0;background:transparent
+}
+.pill button{
+  background:var(--brand);color:#fff;border-radius:999px;padding:10px 18px;font-weight:600
+}
+.pill button:hover{opacity:.92}
+.consent{
+  margin-top:12px;display:flex;align-items:flex-start;gap:8px;color:var(--muted);font-size:.9rem;text-align:left
+}
+.consent a{color:var(--fg);text-decoration:underline}
+.socials{
+  margin-top:18px;display:flex;justify-content:center;gap:14px
+}
+.socials svg{width:22px;height:22px;fill:currentColor;opacity:.9}
+.socials a:hover svg{opacity:1}
+
+/* ---------- Footer ---------- */
+footer{
+  margin-top:48px;padding:40px 0;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(4,1fr);gap:22px;align-items:start
+}
+footer h2{font-size:1.05rem;margin-bottom:10px}
+footer ul{list-style:none;display:grid;gap:8px}
+footer li{color:var(--muted)}
+footer li:hover{color:#111}
+footer > button{
+  justify-self:end;align-self:start;background:#fff;border:1px solid var(--line);
+  border-radius:999px;box-shadow:var(--shadow);padding:8px
+}
+footer > button img{width:20px;height:20px}
+
+/* ---------- Helpers ---------- */
+section{scroll-margin-top:84px}
+button:focus-visible, a:focus-visible, input:focus-visible{
+  outline:2px solid #2563eb;outline-offset:2px
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1100px){
+  #products .container{grid-template-columns:repeat(3,1fr)}
+  .STORES .container{grid-template-columns:1fr}
+}
+@media (max-width:900px){
+  #products .container{grid-template-columns:repeat(2,1fr)}
+  .ACCESORIES .container{grid-template-columns:repeat(2,1fr)}
+  .MAYBACH .container{grid-template-columns:1fr}
+  #hero .img-container img{height:56vh}
+}
+@media (max-width:640px){
+  header nav{gap:18px}
+  #products .container{grid-template-columns:1fr}
+  .ACCESORIES .container{grid-template-columns:1fr}
+  footer{grid-template-columns:1fr 1fr}
+  #hero .img-container img{height:48vh}
+  .text-butoon{position:static;margin:12px 0}
+}
+
