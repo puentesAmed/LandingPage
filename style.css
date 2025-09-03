@@ -36,7 +36,7 @@ header .container{
   display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;width: 100%
 }
 .logo{height:36px;width:auto;padding-left: 15px;}
-header nav{display:flex;gap:28px}
+header nav{display:flex;align-items:start;gap:28px;width:100%;padding: 15px   ;}
 header nav a{
   font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;
   padding:6px 0;position:relative;color:#111;
@@ -46,13 +46,14 @@ header nav a::after{
   transition:width .2s ease;
 }
 header nav a:hover::after{width:100%}
-.acount{display:flex;align-items:center;gap:16px;padding-right: 15px;}
+
+.acount{display:flex;align-items:right;gap:16px;padding-right: 15px;}
 .acount img{width:22px;height:22px;object-fit:contain;opacity:.9}
 .acount img:hover{opacity:1}
 
 /* ---------- Hero ---------- */
 #hero{position:relative}
-#hero .container{position:relative;padding:0;width:100%}
+#hero .container{position:relative;padding:1px;width:100%}
 #hero .img-container img{
   width:100%;height:64vh;object-fit:cover;object-position:center;
 }
@@ -192,6 +193,20 @@ button:focus-visible, a:focus-visible, input:focus-visible{
   outline:2px solid #2563eb;outline-offset:2px
 }
 
+/* Ocultamos el checkbox */
+.menu-toggle {
+  display: none;
+}
+
+/* Icono hamburguesa oculto en escritorio */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 12px;
+
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width:1100px){
   #products .container{grid-template-columns:repeat(3,1fr)}
@@ -201,14 +216,69 @@ button:focus-visible, a:focus-visible, input:focus-visible{
   #products .container{grid-template-columns:repeat(2,1fr)}
   .ACCESORIES .container{grid-template-columns:repeat(2,1fr)}
   .MAYBACH .container{grid-template-columns:1fr}
-  #hero .img-container img{height:56vh}
+  #hero .img-container img{height:56vh;width:100%}
 }
 @media (max-width:640px){
   header nav{gap:18px}
   #products .container{grid-template-columns:1fr}
   .ACCESORIES .container{grid-template-columns:1fr}
   footer{grid-template-columns:1fr 1fr}
-  #hero .img-container img{height:48vh}
+  #hero .img-container img{height:48vh;width:100%}
   .text-butoon{position:static;margin:12px 0}
 }
+@media (max-width:400px){
+  header nav{gap:18px}
+  #products .container{grid-template-columns:1fr}
+  .ACCESORIES .container{grid-template-columns:1fr}
+  footer{grid-template-columns:1fr 1fr}
+  #hero .img-container img{height:38vh;width:100%}
+  .text-butoon{position:static;margin:12px 0}
+}
+
+
+/* ---------------------- */
+/* Responsive para móvil  */
+/* ---------------------- */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 12px;
+    background: #fff;
+    width: 200px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 10px;
+    z-index: 20;
+  }
+
+  /* Mostrar menú si el input está checked */
+  .container:has(.menu-toggle:checked) .menu {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-right: 12px;
+  }
+
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .acount {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+ 
+
 
