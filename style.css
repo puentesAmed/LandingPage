@@ -104,8 +104,8 @@ header nav a:hover::after{width:100%}
 .find:hover{opacity:.92}
 
 /* ---------- Accessories ---------- */
-.ACCESORIES{padding:56px 0}
-.ACCESORIES .container{
+.ACCESSORIES{padding:56px 0}
+.ACCESSORIES .container{
   display:grid;grid-template-columns:repeat(3,1fr);gap:22px
 }
 .element{
@@ -214,22 +214,22 @@ button:focus-visible, a:focus-visible, input:focus-visible{
 }
 @media (max-width:900px){
   #products .container{grid-template-columns:repeat(2,1fr)}
-  .ACCESORIES .container{grid-template-columns:repeat(2,1fr)}
+  .ACCESSORIES .container{grid-template-columns:repeat(2,1fr)}
   .MAYBACH .container{grid-template-columns:1fr}
   #hero .img-container img{height:56vh;width:100%}
 }
 @media (max-width:640px){
   header nav{gap:18px}
   #products .container{grid-template-columns:1fr}
-  .ACCESORIES .container{grid-template-columns:1fr}
+  .ACCESSORIES .container{grid-template-columns:1fr}
   footer{grid-template-columns:1fr 1fr}
   #hero .img-container img{height:48vh;width:100%}
   .text-butoon{position:static;margin:12px 0}
 }
-@media (max-width:400px){
+@media (max-width:480px){
   header nav{gap:18px}
   #products .container{grid-template-columns:1fr}
-  .ACCESORIES .container{grid-template-columns:1fr}
+  .ACCESSORIES .container{grid-template-columns:1fr}
   footer{grid-template-columns:1fr 1fr}
   #hero .img-container img{height:38vh;width:100%}
   .text-butoon{position:static;margin:12px 0}
@@ -267,16 +267,26 @@ button:focus-visible, a:focus-visible, input:focus-visible{
     margin-right: 12px;
   }
 
-  header .container {
+  /*header .container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-  }
+    align-items: right;
+    padding: 10px;
+  }*/
 
-  .acount {
+  /*.acount {
     display: flex;
     gap: 10px;
-  }
+  }*/
+  /* Quita el ancho forzado del nav en móvil */
+  header nav{ width:auto; padding:0; }
+
+  /* Ordena y agrupa a la derecha */
+  header .container{ display:flex; align-items:center; }
+  .acount{ order:2; display:flex; gap:10px; margin-left:auto; } /* iconos pegados al burger */
+  .menu-icon{ order:3; }    /* burger a la derecha */  
+  .logo{ order:1; }                             /* logo a la izquierda */
+
 }
 
  
