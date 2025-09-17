@@ -6,7 +6,6 @@
   --muted:#6b7280;
   --line:#e5e7eb;
   --brand:#111111;
-  --accent:#b91c1c; /* rojo sutil para detalles */
   --radius:18px;
   --shadow:0 8px 24px rgba(0,0,0,.08);
 }
@@ -181,11 +180,11 @@ footer h2{font-size:1.05rem;margin-bottom:10px;color: var(--bg);}
 footer ul{list-style:none;display:grid;gap:8px}
 footer li{color:var(--muted)}
 footer li:hover{color:#111}
-footer > button{
+footer > a.to-top{
   justify-self:end;align-self:flex-end;background:#fff;border:1px solid var(--line);
   border-radius:999px;box-shadow:var(--shadow);padding:8px
 }
-footer > button img{width:20px;height:20px}
+footer > a.to-top img{width:20px;height:20px}
 
 /* ---------- Helpers ---------- */
 section{scroll-margin-top:84px}
@@ -267,28 +266,38 @@ button:focus-visible, a:focus-visible, input:focus-visible{
     margin-right: 12px;
   }
 
-  /*header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: right;
-    padding: 10px;
-  }*/
-
-  /*.acount {
-    display: flex;
-    gap: 10px;
-  }*/
   /* Quita el ancho forzado del nav en móvil */
   header nav{ width:auto; padding:0; }
 
   /* Ordena y agrupa a la derecha */
   header .container{ display:flex; align-items:center; }
   .acount{ order:2; display:flex; gap:10px; margin-left:auto; } /* iconos pegados al burger */
-  .menu-icon{ order:3; }    /* burger a la derecha */  
-  .logo{ order:1; }                             /* logo a la izquierda */
+  .menu-icon{ order:3; }   
+  .logo{ order:1; }                         
 
 }
 
- 
+/* --- Fix newsletter overflow on small screens --- */
+.pill input{min-width:0}
+@media (max-width: 480px){
+  .pill{flex-wrap:wrap;padding:10px}
+  .pill button{width:100%}
+}
 
+/* --- Footer spacing tweaks for mobile --- */
+@media (max-width:640px){
+  footer{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media (max-width:480px){
+  footer{grid-template-columns:1fr;gap:24px}
+}
 
+/* --- Anchor styled as top button --- */
+footer > a.to-top{
+  justify-self:end;align-self:flex-end;background:#fff;border:1px solid var(--line);
+  border-radius:999px;box-shadow:var(--shadow);padding:8px
+}
+footer > a.to-top img{width:20px;height:20px}
+
+/* --- Ensure .final headings readable on dark bg --- */
+.final h4{color:var(--bg)}
